@@ -11,4 +11,6 @@ class Async_User():
             return x
 
     async def get_board(self, boardname):
-        async with self.sess.get()
+        async with self.sess.get('https://ReplREST.lamaqdahodwala.repl.co/api/board/{}'.format(boardname)) as resp:
+            x = await resp.json()
+            return x
